@@ -17,4 +17,4 @@ A professional, responsive resume website built with HTML, CSS, and JavaScript.
 - Font Awesome icons
 
 ## Live Demo
-[View Live Demo](https://AhmedFathyMohamed10.github.io/resume-website)
+[View Live Demo](https://ahmedfathymohamed10.github.io/resume-website/)
