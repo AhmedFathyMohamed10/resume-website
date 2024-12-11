@@ -1,0 +1,66 @@
+AHMED FATHY MOHAMMED
+BI Analyst
+Egypt, Cairo | Email: [Your Gmail] | Phone: +201068180651 | LinkedIn: [Your LinkedIn URL]
+
+PROFESSIONAL SUMMARY
+Results-driven BI Analyst with expertise in data visualization, analytics, and healthcare IT systems. Demonstrated success in transforming complex medical data into actionable insights, improving system performance, and driving data-driven decision-making. Proficient in Power BI, SQL, and data warehouse technologies.
+
+PROFESSIONAL EXPERIENCE
+
+BI ANALYST | WE HEALTH iT                                                   2024-Present
+Healthcare ERP System Analytics, Egypt, Banha
+• Spearheaded data analysis for 25,000+ monthly active users, resulting in 2x increase in app engagement and 30% reduction in drop-off rates
+• Led internal tracking system enhancement serving 125 employees, delivering 20+ new features and achieving 20% improvement in system performance
+• Optimized two production applications through legacy code modernization, reducing runtime by 50% and enhancing user experience
+• Developed comprehensive medical data visualizations using Power BI, enabling strategic decision-making for healthcare professionals
+
+EDUCATION
+
+Bachelor of Computer Science & Artificial Intelligence                      2019-2023
+Banha University, Egypt
+• GPA: 3.56 with Honors
+
+PROFESSIONAL TRAINING
+
+Power BI Internship | Information Technology Institute (ITI)                Oct 2023
+4-month intensive program, Mansourah, Egypt
+• Mastered: MS SQL Server, ERD, Database Modeling, MSBI (SSIS, SSAS, SSRS), Data Warehousing, Python, Power BI, Excel
+• Developed practical expertise in data handling and business analytics
+
+TECHNICAL SKILLS
+
+Data Analytics & Visualization
+• Advanced Power BI: DAX, calculated columns, measures, data modeling
+• Data Analysis: Descriptive, Prescriptive, Diagnostic, Predictive Analytics
+• Visualization: Custom charts, interactive dashboards, reporting solutions
+
+Database & Data Warehouse
+• Database Systems: PostgreSQL, MongoDB, MySQL, SQL Server
+• ETL Processes: SSIS, data integration, OLAP/OLTP architectures
+• Data Modeling: Star schema, snowflake schema, warehouse design
+
+Programming & Tools
+• Languages: Python, SQL
+• BI Tools: Power BI, SSAS, Excel
+• Data Processing: ETL workflows, data cleaning, validation
+
+KEY PROJECTS
+
+Airline Analysis Dashboard
+• Developed a comprehensive Power BI dashboard analyzing airline industry metrics including flight performance, revenue trends, and passenger demographics
+• Implemented interactive visualizations and DAX measures to provide actionable insights for route optimization and business decision-making
+
+Sales Analytics Dashboard
+• Engineered end-to-end data pipeline from Excel data cleansing to Power BI visualization
+• Created dynamic measures and interactive charts for enhanced sales performance analysis
+
+Customer Promotions and Diversity Analysis
+• Designed and implemented targeted promotional campaigns while analyzing customer segmentation data to enhance market diversity
+• Resulted in improved customer engagement across diverse demographics
+
+CERTIFICATIONS
+• Google Data Analytics
+• Power BI (365 Data Science)
+• Intermediate Python (DataCamp)
+• Power BI – Intermediate, Advanced (DataCamp)
+• Database Fundamentals (Mahara Tech)

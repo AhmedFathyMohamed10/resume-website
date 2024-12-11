@@ -1,0 +1,158 @@
+DAX (Data Analysis Expressions) - Essential Guide for Power BI
+
+20 Most Commonly Used DAX Functions with Real-Life Examples
+=======================================================
+
+1. SUM()
+Description: Adds all numbers in a column
+Example Problem: Calculate total sales for the year
+Solution: Total Sales = SUM(Sales[Amount])
+
+2. CALCULATE()
+Description: Modifies how a measure is filtered
+Example Problem: Find sales for a specific category
+Solution: Electronics Sales = CALCULATE(SUM(Sales[Amount]), Products[Category]="Electronics")
+
+3. FILTER()
+Description: Returns a filtered version of a table
+Example Problem: Get high-value transactions over $1000
+Solution: High Value Sales = CALCULATE(SUM(Sales[Amount]), FILTER(Sales, Sales[Amount] > 1000))
+
+4. RELATED()
+Description: Returns related values from another table
+Example Problem: Get product category for each sale
+Solution: Category = RELATED(Products[Category])
+
+5. AVERAGEX()
+Description: Calculates average over a table after evaluating an expression
+Example Problem: Average order value per customer
+Solution: Avg Order Value = AVERAGEX(Sales, Sales[Quantity] * Sales[Unit Price])
+
+6. DATEADD()
+Description: Shifts dates forward or backward
+Example Problem: Compare sales with previous month
+Solution: Last Month Sales = CALCULATE(SUM(Sales[Amount]), DATEADD(Calendar[Date], -1, MONTH))
+
+7. YTD()
+Description: Year-to-date calculation
+Example Problem: Calculate year-to-date sales
+Solution: YTD Sales = CALCULATE(SUM(Sales[Amount]), DATESYTD(Calendar[Date]))
+
+8. RANKX()
+Description: Ranks items in a specified order
+Example Problem: Rank products by sales
+Solution: Product Rank = RANKX(ALL(Products), [Total Sales])
+
+9. IF()
+Description: Conditional logic
+Example Problem: Categorize sales performance
+Solution: Performance = IF([Sales] > [Target], "Above Target", "Below Target")
+
+10. DISTINCTCOUNT()
+Description: Counts unique values
+Example Problem: Count number of unique customers
+Solution: Unique Customers = DISTINCTCOUNT(Sales[CustomerID])
+
+11. PREVIOUSMONTH()
+Description: Returns the previous month's data
+Example Problem: Month-over-month comparison
+Solution: Previous Month Sales = CALCULATE([Total Sales], PREVIOUSMONTH(Calendar[Date]))
+
+12. COUNTROWS()
+Description: Counts rows in a table
+Example Problem: Count number of transactions
+Solution: Transaction Count = COUNTROWS(Sales)
+
+13. DIVIDE()
+Description: Safe division that handles divide by zero
+Example Problem: Calculate profit margin
+Solution: Profit Margin = DIVIDE([Profit], [Sales], 0)
+
+14. ALL()
+Description: Removes all filters from a table
+Example Problem: Compare to overall average
+Solution: Vs Overall Avg = DIVIDE([Sales], CALCULATE(AVERAGE(Sales[Amount]), ALL(Sales)))
+
+15. SELECTEDVALUE()
+Description: Returns selected value in a filter context
+Example Problem: Show current selection
+Solution: Selected Region = SELECTEDVALUE(Region[Name], "All Regions")
+
+16. SUMX()
+Description: Sum of expressions evaluated row by row
+Example Problem: Calculate total revenue including tax
+Solution: Total Revenue = SUMX(Sales, Sales[Amount] * (1 + Sales[TaxRate]))
+
+17. USERELATIONSHIP()
+Description: Uses inactive relationship for calculation
+Example Problem: Sales by shipping date instead of order date
+Solution: Shipping Sales = CALCULATE([Total Sales], USERELATIONSHIP(Sales[ShipDate], Calendar[Date]))
+
+18. PARALLELPERIOD()
+Description: Returns data from a parallel period
+Example Problem: Compare with same period last year
+Solution: Last Year Sales = CALCULATE([Total Sales], PARALLELPERIOD(Calendar[Date], -12, MONTH))
+
+19. TOPN()
+Description: Returns top N rows
+Example Problem: Find top 5 products by sales
+Solution: Top Products = TOPN(5, Products, [Total Sales])
+
+20. ISFILTERED()
+Description: Checks if a column or table is filtered
+Example Problem: Show different results based on filter state
+Solution: Display Text = IF(ISFILTERED(Product[Category]), "Filtered View", "All Categories")
+
+Real-Life Business Scenarios and Solutions
+========================================
+
+Scenario 1: Sales Performance Dashboard
+Problem: Need to track sales performance against targets with YTD comparison
+Solution:
+YTD Sales = CALCULATE(SUM(Sales[Amount]), DATESYTD(Calendar[Date]))
+YTD Target = CALCULATE(SUM(Targets[Amount]), DATESYTD(Calendar[Date]))
+Performance % = DIVIDE([YTD Sales], [YTD Target], 0)
+
+Scenario 2: Customer Analysis
+Problem: Identify high-value customers and their purchase patterns
+Solution:
+Customer Lifetime Value = 
+CALCULATE(
+    SUM(Sales[Amount]),
+    ALL(Calendar),
+    FILTER(Customer, Customer[ID] = EARLIER(Customer[ID]))
+)
+
+Scenario 3: Inventory Management
+Problem: Track stock levels and identify potential stockouts
+Solution:
+Days of Inventory = 
+DIVIDE(
+    [Current Stock],
+    CALCULATE(
+        AVERAGE(Sales[Quantity]),
+        DATESINPERIOD(Calendar[Date], MAX(Calendar[Date]), -30, DAY)
+    )
+)
+
+Scenario 4: Financial Reporting
+Problem: Create profit and loss statement with variance analysis
+Solution:
+Variance % = 
+VAR ActualAmount = [Actual Sales]
+VAR BudgetAmount = [Budgeted Sales]
+RETURN
+DIVIDE(
+    ActualAmount - BudgetAmount,
+    BudgetAmount,
+    0
+)
+
+Tips for DAX Success:
+1. Always consider filter context when writing measures
+2. Use variables (VAR) for complex calculations to improve readability
+3. Consider performance implications when using iterative functions (X functions)
+4. Test measures with different filter combinations
+5. Use comments to document complex calculations
+
+Remember: DAX is context-dependent, so always consider how your measures will behave under different filter scenarios!
